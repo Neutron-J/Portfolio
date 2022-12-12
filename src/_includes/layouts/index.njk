@@ -1,0 +1,23 @@
+{% extends "./base.njk" %}
+{% block main %}
+{{ content | safe }}
+<nav>
+  {{ collections.all | eleventyNavigation | eleventyNavigationToHtml | safe }}
+</nav>
+<section>
+  <footer>
+    <ul class="footerLinks">
+      <li>
+        <a href="mailto:hey@jamesbates.dev">Email</a>
+      </li>
+      <li>
+        <a href="https://www.instagram.com/bizzle_jimmy/">@bizzle_jimmy</a>
+      </li>
+      <li>
+        <a href="https://github.com/Neutron-J">GitHub</a>
+      </li>
+    </ul>
+    {% include "../components/copyright.njk" %}
+  </footer>
+</section>
+{% endblock %}

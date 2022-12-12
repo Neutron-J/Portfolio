@@ -1,0 +1,9 @@
+@use 'vars';
+@use 'reset';
+@use 'type';
+@use 'layout';
+
+body {
+  font-family: sans-serif;
+  background-color: vars.$color-page;
+}

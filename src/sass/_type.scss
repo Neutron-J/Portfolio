@@ -1,0 +1,22 @@
+@use 'vars'; 
+
+body {
+  font-family: 'Outfit', 'Helvetica', sans-serif;
+  color: vars.$color-green;
+}
+
+h1, .h1 {
+  font-size: calc(18px + (200 - 18) * ((100vw - 300px) / (1600 - 300)));
+  letter-spacing: -0.05em;
+  line-height: 1;
+  transform: translateY(33%);
+  writing-mode: horizontal-tb;
+  @media (min-width: 820px) {
+    transform: translateX(-33%);
+    writing-mode:  vertical-lr;
+  }
+  @media (min-width: 1120px) {
+    transform: translateY(33%);
+    writing-mode: horizontal-tb;
+  }
+}

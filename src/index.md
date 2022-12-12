@@ -1,5 +1,6 @@
 ---
-title: Hey there!
-layout: 'base.njk'
+title: Hey
+layout: 'layouts/index.njk'
 ---
-Some content
+## Hey I’m James!
+Just another frontend developer based in London, carolling code and wrangling pixels on the great big www. 

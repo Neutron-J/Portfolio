@@ -1,0 +1,88 @@
+@use 'vars'; 
+
+body {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+
+  @media screen and (min-width: vars.$mid) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  overflow: hidden;
+  order: 2;
+
+  @media screen and (min-width: vars.$mid) {
+    order: 1;
+  }
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  order: 1;
+
+  @media screen and (min-width: vars.$mid) {
+    order: 2;
+  }
+}
+
+nav {
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      display: block;
+    }
+  }
+
+  a {
+    color: vars.$color-green;
+    font-size: 3rem;
+    font-weight: 900;
+    text-decoration: none;
+
+    &:hover {
+      color: vars.$color-orange;
+      @supports (-webkit-text-stroke: 2px vars.$color-orange) {
+        color: transparent;
+        -webkit-text-stroke: 2px vars.$color-orange;
+      }
+      text-decoration: underline;
+    }
+  }
+}
+
+ul.footerLinks {
+  list-style: none;
+  padding: 0;
+
+  li {
+    padding: 0.1rem 0.2rem;
+    display: inline-block;
+  }
+
+  a {
+    color: vars.$color-green;
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-decoration: underline;
+
+    &:hover {
+      color: vars.$color-orange;
+    }
+  }
+}

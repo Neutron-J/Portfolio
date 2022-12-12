@@ -3,14 +3,26 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "dependencies": {},
-  "devDependencies": {
-    "@11ty/eleventy": "^1.0.2"
-  },
   "scripts": {
-    "test": "test",
-    "start": "eleventy --serve",
-    "build": "eleventy"
+    "watch:sass": "sass  --no-source-map --watch src/sass:public/css",
+    "watch:eleventy": "eleventy --serve",
+    "build:sass": "sass  --no-source-map src/sass:public/css",
+    "build:eleventy": "eleventy",
+    "postbuild": "lightningcss --minify --targets '> 0.25%, not IE 11' public/css/*.css -o public/css/*.css",
+    "start": "npm-run-all build:sass --parallel watch:*",
+    "build": "npm-run-all build:sass build:eleventy"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^1.0.2",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^2.0.3",
+    "cross-env": "^7.0.3",
+    "lightningcss-cli": "^1.15.1",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.54.9"
+  },
+  "devDependencies": {
+    "@11ty/eleventy-navigation": "^0.3.5",
+    "cross-env": "5.2.0"
   },
   "repository": {
     "type": "git",

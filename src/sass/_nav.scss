@@ -1,0 +1,138 @@
+@use 'vars'; 
+
+nav {
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      display: block;
+      font-size: 2.369rem;
+      font-weight: 900;
+      padding: 0.1em 0;
+
+      @media (min-width: 370px) {
+        font-size: 3.157rem;
+      }
+
+      @media (min-width: 700px) {
+        font-size: 4.209rem;
+      }
+    }
+  }
+
+  a {
+    color: vars.$color-green;
+    text-decoration: none;
+    position: relative;
+
+    @media (min-width: vars.$mid) {
+      &::before {
+        color: vars.$color-green;
+        -webkit-text-stroke: 2px vars.$color-green;
+        content: '';
+        display: block;
+        position: absolute;
+        left: -1.5ch;
+        top: 0;
+        bottom: 0;
+        margin: auto 0;
+        background-image: url('/images/right-manicule.svg');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        height: 1ch;
+        width: 1.2ch;
+        opacity: 0;
+        transition: opacity 0.3s ease-out;
+      }
+    }
+
+    &:hover {
+      color: vars.$color-orange;
+      @supports (-webkit-text-stroke: 2px vars.$color-orange) {
+        color: transparent;
+        -webkit-text-stroke: 2px vars.$color-orange;
+      }
+      text-decoration: underline;
+
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+ul.footerLinks {
+  list-style: none;
+  padding: 0;
+
+  li {
+    padding: 0.1rem 0.2rem;
+    display: inline-block;
+  }
+
+  a {
+    color: vars.$color-green;
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-decoration: underline;
+    position: relative;
+
+    &:hover {
+      color: vars.$color-orange;
+    }
+  }
+}
+
+.button__back {
+  color: vars.$color-green;
+  text-decoration: underline;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0.5em 0 0.5em 1em;
+  font-size: 1.4rem;
+
+  &::before {
+    color: vars.$color-green;
+    -webkit-text-stroke: 2px vars.$color-green;
+    content: '';
+    display: block;
+    background-image: url('/images/left-manicule.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    height: 1.7ch;
+    width: 3ch;
+    margin-right: 0.4ch;
+    transition: transform 0.2s ease-in-out;
+  }
+
+  &:hover {
+    color: vars.$color-orange;
+
+    &::before {
+      transform: translateX(-0.3em);
+    }
+  }
+
+  header & {
+    display: none;
+
+    @media (min-width: vars.$mid) {
+      display: flex;
+    }
+  }
+
+  main & {
+    display: flex;
+    padding-top: 0;
+    padding-left: 0;
+
+    @media (min-width: vars.$mid) {
+      display: none;
+    }
+  }
+}

@@ -3,6 +3,6 @@ eleventyNavigation:
   key: Zine
   order: 3
 title: Zine
-layout: 'layouts/photos.njk'
+layout: 'layouts/base.njk'
 ---
-Buy my zine
+Coming soon....

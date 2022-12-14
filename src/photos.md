@@ -5,4 +5,4 @@ eleventyNavigation:
 title: Photos
 layout: 'layouts/photos.njk'
 ---
-Photography page
+Photographs page

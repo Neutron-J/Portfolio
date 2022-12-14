@@ -4,13 +4,19 @@
   {% include "../components/head.njk" %}
   <title>{{ title }} | James Bates Frontend Developer</title>
 </head>
-<body>
+<body class="{{ customClass }}">
   <header>
   {% block header %}
+    {% if 'index' !== customClass %}
+      <a href="/" class="button__back">Back</a>
+    {% endif %}
     <h1>{{ title }}</h1>
   {% endblock %}
   </header>
   <main>
+  {% if 'index' !== customClass %}
+    <a href="/" class="button__back">Back</a>
+  {% endif %}
   {% block main %}
   {{ content | safe }}
   {% endblock %}

@@ -1,13 +1,16 @@
 @use 'vars'; 
 
 body {
+  background-color: vars.$color-page;
   height: 100%;
   display: grid;
   grid-template-columns: 1fr;
+  grid-template-rows: min-content 1fr;
   gap: 1rem;
 
-  @media screen and (min-width: vars.$mid) {
-    grid-template-columns: repeat(2, 1fr);
+  @media (min-width: vars.$mid) {
+    grid-template-columns: min-content auto;
+    grid-template-rows: 1fr;
     gap: 2rem;
   }
 }
@@ -16,12 +19,24 @@ header {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: flex-end;
-  overflow: hidden;
+  justify-content: space-between;
+  position: fixed;
+  bottom: 0;
   order: 2;
+  overflow: hidden;
+  width: 100%;
 
-  @media screen and (min-width: vars.$mid) {
+  @media (min-width: vars.$mid) {
+    overflow-x: visible;
+    overflow-y: clip;
+    position: relative;
+    top: 0;
+    height: 100vh;
     order: 1;
+  }
+
+  .index & {
+    justify-content: flex-end;
   }
 }
 
@@ -29,60 +44,16 @@ main {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: flex-end;
+  justify-content: flex-start;
   padding-top: 2rem;
+  padding-right: 1rem;
   padding-bottom: 2rem;
+  padding-left: 1rem;
   order: 1;
-
+  min-height: 100vh;
+  
   @media screen and (min-width: vars.$mid) {
+    justify-content: flex-end;
     order: 2;
-  }
-}
-
-nav {
-  ul {
-    list-style: none;
-    padding: 0;
-
-    li {
-      display: block;
-    }
-  }
-
-  a {
-    color: vars.$color-green;
-    font-size: 3rem;
-    font-weight: 900;
-    text-decoration: none;
-
-    &:hover {
-      color: vars.$color-orange;
-      @supports (-webkit-text-stroke: 2px vars.$color-orange) {
-        color: transparent;
-        -webkit-text-stroke: 2px vars.$color-orange;
-      }
-      text-decoration: underline;
-    }
-  }
-}
-
-ul.footerLinks {
-  list-style: none;
-  padding: 0;
-
-  li {
-    padding: 0.1rem 0.2rem;
-    display: inline-block;
-  }
-
-  a {
-    color: vars.$color-green;
-    font-size: 1.2rem;
-    font-weight: 400;
-    text-decoration: underline;
-
-    &:hover {
-      color: vars.$color-orange;
-    }
   }
 }

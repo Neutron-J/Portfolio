@@ -1,0 +1,27 @@
+---
+import Root from "./Root.astro";
+import Header from "../components/Header.astro";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<Root title={title}>
+  <Header heading={title} />
+  <main class="container">
+    <slot />
+  </main>
+</Root>
+<style>
+  main {
+    margin: auto;
+    padding: var(--space-4);
+    width: calc(100% - var(--space-4));
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+  }
+</style>

@@ -1,0 +1,128 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Hello">
+  <h4>Hey, I&apos;m James!</h4>
+  <p>
+    A Frontend Developer with a wide range of experience from React and Vue
+    frameworks, to vanilla HTML, CSS and JS applications, across a diverse range
+    of clients, including fashion, eyewear, pharmaceuticals, travel and
+    telecoms.
+  </p>
+  <p>
+    Find me on <a href="https://github.com/Neutron-J">GitHub</a>, <a
+      href="https://www.linkedin.com/in/james-bates-98988b46/">LinkedIn</a
+    > or drop me an <a href="mailto:james@james-bates.co?subject=Hello">email</a
+    >.
+  </p>
+  <div class="page-nav">
+    <ul>
+      <li><a href="/work/" class="link-main">Work</a></li>
+      <li><a href="/lab/" class="link-main">Experiments</a></li>
+      <li><a href="/photography/" class="link-main">Photography</a></li>
+    </ul>
+  </div>
+  <style>
+    h4 {
+      margin-bottom: var(--space-2);
+    }
+    :is(p) a {
+      font-weight: var(--fontWeight-semibold);
+      text-decoration: none;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 66%;
+        left: -0.1em;
+        right: -0.1em;
+        bottom: 0;
+        transition: top 200ms cubic-bezier(0, 0.8, 0.13, 1);
+        background-color: var(--color-secondary-lighter);
+      }
+      &:hover {
+        color: var(--color-primary);
+        &::after {
+          top: 0%;
+        }
+      }
+    }
+    a.link-main {
+      font-family: "Outfit", sans-serif;
+      line-height: 1;
+      color: var(--color-primary);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+
+      @media (min-width: 700px) {
+        font-weight: var(--fontWeight-black);
+      }
+
+      &::after {
+        content: "";
+        margin-left: var(--space-3);
+        background-image: url("/icon_arrow_forward.svg");
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        height: 1ch;
+        width: 1.2ch;
+        line-height: 1;
+      }
+
+      &:hover {
+        color: var(--color-secondary);
+        @supports (-webkit-text-stroke: 2px var(--color-secondary)) {
+          color: transparent;
+          -webkit-text-stroke: 2px var(--color-secondary);
+        }
+        text-decoration: underline;
+
+        &::after {
+          transform: translateX(var(--space-3));
+          transition: transform 0.3s ease-out;
+        }
+      }
+    }
+    .page-nav {
+      padding-top: var(--space-8);
+      @media (min-width: 1000px) {
+        padding-top: var(--space-12);
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+        display: grid;
+        gap: var(--space-3);
+
+        @media (min-width: 1360px) {
+          grid-template-columns: repeat(3, max-content);
+          gap: var(--space-6);
+        }
+
+        @media (min-width: 1600px) {
+          gap: var(--space-8);
+        }
+
+        li {
+          display: block;
+          font-size: 2.369rem;
+          font-weight: var(--fontWeight-black);
+          padding: 0.1em 0;
+
+          @media (min-width: 400px) {
+            font-size: 3.157rem;
+          }
+
+          @media (min-width: 700px) {
+            font-size: 4.209rem;
+          }
+        }
+      }
+    }
+  </style>
+</Layout>

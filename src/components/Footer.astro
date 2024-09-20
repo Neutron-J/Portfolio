@@ -1,0 +1,27 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="container">
+  <p>&copy;James Bates {year}</p>
+</footer>
+<style>
+  footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: var(--space-8);
+    padding-bottom: var(--space-4);
+    @media (min-width: 700px) {
+      padding-top: var(--space-12);
+      padding-bottom: var(--space-6);
+    }
+    @media (min-width: 1200px) {
+      padding-bottom: var(--space-8);
+    }
+    p {
+      text-align: center;
+      padding: 0;
+    }
+  }
+</style>

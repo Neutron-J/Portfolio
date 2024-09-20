@@ -64,6 +64,13 @@
     --fontWeight-black: 900;
 }
 
+::selection {
+  background: var(--color-secondary-light); /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background:var(--color-secondary-light); /* Gecko Browsers */
+}
+
 body {
   background-color: var(--color-bg);
   font-family: var(--font-body);

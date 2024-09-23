@@ -9,22 +9,24 @@ const { pathname } = Astro.props;
   <ul>
     <li>
       <a href='/' class={pathname === "" ? "current" : ""}
-        >H<span class='only-lg'>ome</span></a
+        ><span class='only-sm'>Hm</span><span class='only-lg'>Home</span></a
       >
     </li>
     <li>
       <a href='/work' class={pathname === "work" ? "current" : ""}
-        >W<span class='only-lg'>ork</span></a
+        ><span class='only-sm'>Wk</span><span class='only-lg'>Work</span></a
       >
     </li>
     <li>
       <a href='/lab' class={pathname === "lab" ? "current" : ""}
-        >Ex<span class='only-lg'>periments</span></a
+        ><span class='only-sm'>Ex</span><span class='only-lg'>Experiments</span
+        ></a
       >
     </li>
     <li>
       <a href='/photography' class={pathname === "photography" ? "current" : ""}
-        >Ph<span class='only-lg'>otography</span></a
+        ><span class='only-sm'>Ph</span><span class='only-lg'>Photography</span
+        ></a
       >
     </li>
   </ul>
@@ -50,6 +52,12 @@ const { pathname } = Astro.props;
       gap: var(--space-8);
     }
     li {
+      .only-sm {
+        display: inline-block;
+        @media (min-width: 700px) {
+          display: none;
+        }
+      }
       .only-lg {
         display: none;
         @media (min-width: 700px) {

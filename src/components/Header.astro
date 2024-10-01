@@ -1,7 +1,7 @@
 ---
 import Nav from "../components/Nav.astro";
 interface Props {
-  heading: string;
+  heading?: string;
 }
 const { pathname } = Astro.url;
 const formattedPath = pathname.replaceAll("/", "");
@@ -11,64 +11,61 @@ const { heading } = Astro.props;
 <header class={`container ${formattedPath}`}>
   <Nav pathname={formattedPath} />
 
-  <h1>
-    {
-      heading
-        .split("")
-        .map((letter) => <mark data-text={letter}>{letter}</mark>)
-    }
-  </h1>
-
-  <style>
-    header {
-      padding-top: var(--space-6);
-      padding-bottom: var(--space-6);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      height: 100%;
-    }
-    h1,
-    .h1 {
-      font-size: calc(18px + (200 - 18) * ((100vw - 300px) / (1600 - 300)));
-      font-size: 20vw;
-      line-height: 0.8;
-      width: 5ch;
-      /* writing-mode: horizontal-tb; */
-      @media (min-width: 700px) {
-        font-size: calc(20px + (200 - 20) * ((100vw - 300px) / (1600 - 300)));
-        font-size: 18vw;
-        /* writing-mode: vertical-lr; */
-      }
-      @media (min-width: 900px) {
-        font-size: 8vw;
-        /* writing-mode: horizontal-tb; */
-        width: 5ch;
-      }
-      @media (min-width: 1200px) {
-        font-size: 6vw;
-        /* writing-mode: horizontal-tb; */
-        width: 5ch;
-      }
-      mark {
-        position: relative;
-        display: inline-block;
-        color: var(--color-primary);
-        background: none;
-        letter-spacing: -0.02em;
-        transform: rotateX(20deg) rotateY(-33deg) rotateZ(-5deg);
-        text-shadow:
-          1px 1px 0 var(--color-secondary),
-          2px 2px 0 var(--color-secondary),
-          3px 3px 0 var(--color-secondary),
-          4px 4px 0 var(--color-secondary),
-          5px 5px 0 var(--color-secondary),
-          6px 6px 0 var(--color-secondary),
-          7px 7px 0 var(--color-secondary);
-      }
-    }
-    .work h1 mark:first-of-type {
-      letter-spacing: -0.2em;
-    }
-  </style>
+  {
+    heading && (
+      <h1>
+        {heading.split("").map((letter) => (
+          <mark data-text={letter}>{letter}</mark>
+        ))}
+      </h1>
+    )
+  }
 </header>
+<style>
+  header {
+    padding-top: var(--space-6);
+    padding-bottom: var(--space-6);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+  h1,
+  .h1 {
+    font-size: calc(18px + (200 - 18) * ((100vw - 300px) / (1600 - 300)));
+    font-size: 20vw;
+    line-height: 0.8;
+    width: 5ch;
+    @media (min-width: 700px) {
+      font-size: calc(20px + (200 - 20) * ((100vw - 300px) / (1600 - 300)));
+      font-size: 18vw;
+    }
+    @media (min-width: 900px) {
+      font-size: 8vw;
+      width: 5ch;
+    }
+    @media (min-width: 1200px) {
+      font-size: 6vw;
+      width: 5ch;
+    }
+    mark {
+      position: relative;
+      display: inline-block;
+      color: var(--color-primary);
+      background: none;
+      letter-spacing: -0.02em;
+      transform: rotateX(20deg) rotateY(-33deg) rotateZ(-5deg);
+      text-shadow:
+        1px 1px var(--color-secondary),
+        2px 2px var(--color-secondary),
+        3px 3px var(--color-secondary),
+        4px 4px var(--color-secondary),
+        5px 5px var(--color-secondary),
+        6px 6px var(--color-secondary),
+        7px 7px var(--color-secondary-darkest);
+    }
+  }
+  .work h1 mark:first-of-type {
+    letter-spacing: -0.2em;
+  }
+</style>

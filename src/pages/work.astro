@@ -5,6 +5,57 @@ import BadgesTech from "@components/BadgesTech.astro";
 
 <LayoutWork title='Work'>
   <section class='grid'>
+    <h2>ITG</h2>
+    <p class='date'>Feb 2025 &mdash; Current</p>
+    <BadgesTech
+      techItems={[
+        "React",
+        "Redux",
+        "TypeScript",
+        "Node",
+        "Tan Stack Query",
+        "Zustand",
+        "Jest",
+        "Storybook",
+        "OIDC",
+        "OAuth",
+      ]}
+    />
+    <div>
+      <p>
+        As part of the Land Rover Account team, develop and maintain a React
+        single-page application which enables Land Rover customers to securely
+        manage their contact details and marketing preferences. Built
+        responsive, reusable React components, integrating with multiple REST
+        APIs to deliver secure, reliable customer account functionality, with a
+        focus on usability and accessibility.
+      </p>
+      <p>
+        Led the development of a shared authentication library using
+        OAuth/OpenID Connect (OIDC), creating a reusable authentication solution
+        for multiple Jaguar Land Rover applications. In the absence of an
+        integrated test environment, designed and built a lightweight sandbox
+        application to run end-to-end tests against core authentication flows.
+      </p>
+      <p>
+        As part of the authentication library work developed a local
+        Node.js/Express based OIDC/OAuth identity provider, reducing reliance on
+        third-party services, improving developer productivity, and enabling
+        other teams to integrate and test authentication flows before external
+        identity providers were available. Use of the local identity provider
+        during development has reduced external authentication calls by an
+        estimated 80%, removing the risk of rate‑limit failures. Additionally,
+        as it’s running locally network responses are much faster reducing the
+        time to run the E2E tests by around 70%, speeding up development.
+      </p>
+      <p>
+        Working within a Test-Driven Development (TDD) environment, writing unit
+        and integration tests to produce high-quality, maintainable code, and
+        applied both BDD and TDD practices throughout the authentication
+        project. Increased code coverage on legacy code in the last year by 10%
+        as well as ensuring 90% unit-test coverage for all new work.
+      </p>
+    </div>
     <h2><a href='https://bikeclub.com/'>Bike Club</a></h2>
     <p class='date'>Jan 2023 &mdash; Aug 2024</p>
     <BadgesTech
@@ -23,31 +74,30 @@ import BadgesTech from "@components/BadgesTech.astro";
     />
     <div class='description'>
       <p>
-        Migration of the UK store from a Shopify site to a headless
-        e&#8209;commerce setup, reconstructing the site UI with React and Next,
-        whilst retaining Shopify for the store's back-end. Led the development
-        work stream creating the new product pages and played a pivotal role in
-        the development of the new cart, exchanges, and cancellation
-        functionalities.
+        Worked on the migration of the UK store from a Shopify site to a
+        headless e&#8209;commerce architecture, reconstructing the UI with React
+        and Next.js, retaining Shopify as the back-end.
       </p>
       <p>
-        Day-to-day maintenance across Bike Club country sites including the UK,
-        Germany, and Spain. Developed new features, UI enhancements, and bug
-        fixes, as well as the initial setup and template build of the Spain and
-        the soon to launch Netherlands Shopify sites.
+        Led development of the new product pages and played a pivotal role in
+        building cart, exchanges and cancellation journey, working closely with
+        the UX/UI designer to deliver the new customer experience. The improved
+        exchange and cancellation functionality massively reduced emails to
+        customer support, and increased customer retention by 20%.
       </p>
       <p>
-        Developed unit tests using the Jest testing framework in tandem with
-        React Testing Library. As well as keeping Storybook up-to-date with new
-        and updated components.
+        Developed unit tests using Jest and React Testing Library, as well as
+        maintaining components in Storybook.
       </p>
       <p>
         Provided support in code reviews and mentored junior developers within
         the team.
       </p>
       <p>
-        Internationalisation POC of the UK site, bringing our sites across
-        Europe from Shopify to one unified design system and codebase.
+        Began working on the internationalisation of the UK site, bringing our
+        sites across Europe from Shopify to one unified design system and
+        codebase. This project and all frontend projects were unfortunately
+        cancelled due to budget cuts, and led to me being made redundant.
       </p>
     </div>
     <h2><a href='https://www.sungod.co/'>SunGod</a></h2>
@@ -57,20 +107,18 @@ import BadgesTech from "@components/BadgesTech.astro";
     />
     <div>
       <p>
-        Developed new features for the site, major projects have included
-        overhauling the site's main navigation, updates to the product pages and
-        product customiser, as well as revamping the “lens guide” part of the
-        product page.
+        Worked alongside the UX/UI designer to develop new features and updates
+        for the site, major projects included overhauling the site's main
+        navigation, updates to the product pages and product customiser, as well
+        as revamping the “lens guide” on the product page. Utilising A/B testing
+        to understand the impact of changes and optimise the user journey.
       </p>
       <p>
-        Built a separate competition sub-site, utilising Nuxt with content
-        coming from Dato, allowing the partnerships team to create competitions
-        with limited to no input from the tech team.
-      </p>
-      <p>
-        Created a system for sending transactional emails from webhooks, built
-        using NodeJS, outputting statically rendered HTML emails, from a
-        combination of Vue and MJML.
+        Built a separate competition sub-site, utilising Nuxt and Dato, allowing
+        the partnerships team to create competitions with limited to no input
+        from the tech team. As part of competition site also created a system in
+        Node for sending transactional emails from webhooks, which dynamically
+        created HTML emails from a combination of Vue and MJML.
       </p>
       <p>
         Day-to-day maintenance of the main SunGod storefront site, working to
@@ -92,21 +140,15 @@ import BadgesTech from "@components/BadgesTech.astro";
     />
     <div class='description'>
       <p>
-        Landing pages and micro-sites for a variety of clients, using HTML,
-        CSS/SCSS, and a combination of vanilla JS, jQuery and TypeScript.
-      </p>
-      <p>
         Created competition and offer pages for Virgin Media, including a
-        "Santa's Virtual Grotto" competition. This competition was in
-        conjunction with Scope, so involved working alongside their
-        accessibility team to ensure that the site was accessible to a wide
-        range of users and met WACAG AA compliance. Built using HTML, SCSS and
-        TypeScript and deployed in Canopy Deploy.
+        "Santa's Virtual Grotto" competition which was in conjunction with
+        Scope, and involved working alongside Scope’s accessibility team to
+        ensure WCAG AA compliance.
       </p>
       <p>
-        Built semina & webinar sign-up forms and survey sites for various brands
-        across two pharmaceutical companies (Bayer and J&J) using HTML, SCSS,
-        and JS in Salesforce Marketing Cloud.
+        Built seminar & webinar sign-up forms and survey sites for various
+        brands across two pharmaceutical companies (Bayer and J&J) using HTML,
+        SCSS, and JS in Salesforce Marketing Cloud.
       </p>
       <p>
         Developed a proof of concept for a clients in-house monthly magazine,

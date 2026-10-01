@@ -1,7 +1,7 @@
 ---
-import Footer from "../components/Footer.astro";
-import "../styles/reset.css";
-import "../styles/global.css";
+import Footer from "@/components/Footer.astro";
+import "@styles/reset.css";
+import "@styles/global.css";
 
 interface Props {
   title: string;
@@ -16,7 +16,7 @@ const { title } = Astro.props;
     <meta charset='UTF-8' />
     <meta
       name='description'
-      content='Frontend Developer with a wide range of experience from vanilla JS to React and Vue.'
+      content='A Frontend leaning Full-Stack Developer with over eight years of experience building responsive, accessible and maintainable web applications, with a particular focus on React and TypeScript.'
     />
     <meta name='viewport' content='width=device-width' />
     <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
@@ -30,6 +30,7 @@ const { title } = Astro.props;
       href='https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap'
       rel='stylesheet'
     />
+    <slot name='head' />
     <meta name='generator' content={Astro.generator} />
     <title>{title} | James Bates | Frontend Developer</title>
   </head>
@@ -49,5 +50,28 @@ const { title } = Astro.props;
     max-width: 1600px;
     margin-left: auto;
     margin-right: auto;
+  }
+  :is(p) a {
+    font-weight: var(--fontWeight-semibold);
+    text-decoration: none;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: 66%;
+      left: -0.1em;
+      right: -0.1em;
+      bottom: 0;
+      transition: top 200ms cubic-bezier(0, 0.8, 0.13, 1);
+      background-color: var(--color-secondary-lighter);
+    }
+    &:hover {
+      color: var(--color-primary);
+      &::after {
+        top: 0%;
+      }
+    }
   }
 </style>

@@ -1,4 +1,3 @@
-
 :root {
   /* breakpoints for media queries */
   --narrow: 400px;
@@ -38,15 +37,15 @@
 
   /* COLOURS */
   --color-primary: #08360f;
-  --color-primary-dark: #001D00;
+  --color-primary-dark: #001d00;
   --color-primary-darkest: #000300;
   --color-primary-light: #527257;
-  --color-primary-lighter: #9CAF9F;
+  --color-primary-lighter: #9caf9f;
   --color-secondary: #ff4e00;
-  --color-secondary-dark: #B20200;
+  --color-secondary-dark: #b20200;
   --color-secondary-darkest: #660000;
-  --color-secondary-light: #FF834D;
-  --color-secondary-lighter: #FFB899;
+  --color-secondary-light: #ff834d;
+  --color-secondary-lighter: #ffb899;
   --color-bg: #f6f6f6;
   --color-text: var(--color-primary-dark);
 
@@ -54,21 +53,21 @@
   --font-heading: "Outfit", sans-serif;
   --font-body: "IBM Plex Mono", monospace;
   --fontWeight-hairline: 100;
-    --fontWeight-thin: 200;
-    --fontWeight-light: 300;
-    --fontWeight-normal: 400;
-    --fontWeight-medium: 500;
-    --fontWeight-semibold: 600;
-    --fontWeight-bold: 700;
-    --fontWeight-extrabold: 800;
-    --fontWeight-black: 900;
+  --fontWeight-thin: 200;
+  --fontWeight-light: 300;
+  --fontWeight-normal: 400;
+  --fontWeight-medium: 500;
+  --fontWeight-semibold: 600;
+  --fontWeight-bold: 700;
+  --fontWeight-extrabold: 800;
+  --fontWeight-black: 900;
 }
 
 ::selection {
   background: var(--color-secondary-light); /* WebKit/Blink Browsers */
 }
 ::-moz-selection {
-  background:var(--color-secondary-light); /* Gecko Browsers */
+  background: var(--color-secondary-light); /* Gecko Browsers */
 }
 
 body {
@@ -121,7 +120,7 @@ p {
   font-size: 1rem;
   margin-bottom: 1rem;
   font-family: "IBM Plex Mono", monospace;
-  font-weight:  var(--fontWeight-normal);
+  font-weight: var(--fontWeight-normal);
   font-style: normal;
 }
 
@@ -144,11 +143,11 @@ small,
 
   @media (min-width: 700px) {
     padding-left: var(--space-6);
-    padding-right: var(--space-6);    
+    padding-right: var(--space-6);
   }
 
   @media (min-width: 1200px) {
     padding-left: var(--space-8);
-    padding-right: var(--space-8);    
+    padding-right: var(--space-8);
   }
 }

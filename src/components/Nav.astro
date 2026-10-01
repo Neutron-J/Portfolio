@@ -18,12 +18,6 @@ const { pathname } = Astro.props;
       >
     </li>
     <li>
-      <a href='/lab' class={pathname === "lab" ? "current" : ""}
-        ><span class='only-sm'>Ex</span><span class='only-lg'>Experiments</span
-        ></a
-      >
-    </li>
-    <li>
       <a href='/photography' class={pathname === "photography" ? "current" : ""}
         ><span class='only-sm'>Ph</span><span class='only-lg'>Photography</span
         ></a
@@ -44,13 +38,11 @@ const { pathname } = Astro.props;
     justify-content: space-around;
     width: max-content;
     list-style: none;
-    gap: var(--space-6);
+    gap: var(--space-8);
     margin: 0 auto;
     font-weight: var(--fontWeight-bold);
     font-family: var(--font-heading);
-    @media (min-width: ) {
-      gap: var(--space-8);
-    }
+
     li {
       .only-sm {
         display: inline-block;

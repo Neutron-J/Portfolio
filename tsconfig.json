@@ -3,7 +3,11 @@
   "compilerOptions": {
     "lib": [
         "ESNext",
-        "dom"
-    ]
+        "dom","DOM.Iterable",
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "@*": ["src/*"],
+    }
 }
 }

@@ -1,10 +1,10 @@
 ---
-import LayoutWork from "../layouts/LayoutWork.astro";
-import BadgesTech from "../components/BadgesTech.astro";
+import LayoutWork from "@layouts/LayoutWork.astro";
+import BadgesTech from "@components/BadgesTech.astro";
 ---
 
 <LayoutWork title='Work'>
-  <section>
+  <section class='grid'>
     <h2><a href='https://bikeclub.com/'>Bike Club</a></h2>
     <p class='date'>Jan 2023 &mdash; Aug 2024</p>
     <BadgesTech
@@ -116,45 +116,9 @@ import BadgesTech from "../components/BadgesTech.astro";
   </section>
 </LayoutWork>
 <style>
-  section {
-    display: grid;
-    row-gap: var(--space-4);
-    column-gap: var(--space-4);
-    grid-template-columns: 1fr;
-    @media (min-width: 860px) {
-      grid-template-columns: 1fr 2fr;
-      column-gap: var(--space-8);
-    }
-    @media (min-width: 1200px) {
-      grid-template-columns: 1fr 3fr;
-      column-gap: var(--space-16);
-    }
-  }
   h2 {
-    margin-top: var(--space-8);
-    line-height: 1;
-    @media (min-width: 700px) {
-      margin-top: var(--space-12);
-    }
-    @media (min-width: 1000px) {
-      margin-top: var(--space-14);
-    }
     a {
-      display: flex;
-      align-items: center;
-      white-space: nowrap;
-      text-decoration: none;
-      width: min-content;
-      &:hover {
-        color: var(--color-secondary);
-        @supports (-webkit-text-stroke: 2px var(--color-secondary)) {
-          color: transparent;
-          -webkit-text-stroke: 2px var(--color-secondary);
-        }
-      }
       &::after {
-        content: "";
-        margin-left: var(--space-3);
         background-image: url("/icon_arrow_outward.svg");
         background-position: center center;
         background-repeat: no-repeat;
@@ -163,16 +127,6 @@ import BadgesTech from "../components/BadgesTech.astro";
         width: 1.2ch;
         line-height: 1;
       }
-    }
-  }
-  .date {
-    align-self: end;
-    margin: 0;
-    font-weight: var(--fontWeight-medium);
-  }
-  p {
-    &:last-of-type {
-      margin-bottom: 0;
     }
   }
 </style>
